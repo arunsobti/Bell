@@ -1,2 +1,0 @@
-C:\Projects\BCT\BCT\BCT\obj\Debug\BCT.njsprojAssemblyReference.cache
-C:\Projects\BCT\BCT\BCT\obj\Debug\BCT.njsproj.CoreCompileInputs.cache
