@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { SearchService} from '../../services/search.service'
 
 @Component({
   selector: 'app-search',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  searchForm = new FormGroup ({
+    userID: new FormControl(""),
+    PEIN: new FormControl(""),
+    firstName: new FormControl(""),
+    lastName: new FormControl("")
+    });
+
+  constructor(public searchService: SearchService) { 
+  }
 
   ngOnInit() {
   }
+
+  search() {
+//    console.log( this.searchForm.controls["userID"].value);
+//    console.log( this.searchForm.value.userID);
+    this.searchService.search(this.searchForm);
+
+  }
+
 
 }

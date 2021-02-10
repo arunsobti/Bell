@@ -1,7 +1,8 @@
 <div class="search">
-    <table border="1" class="search-frame1">
+  <form [formGroup]="searchForm" >
+    <table border="0" class="search-frame1">
       <tr>  
-        <td class="search-field">User id</td>
+        <td class="search-field"><label for="userID">User ID</label></td>
         <td class="search-field">PEIN</td>
         <td class="search-field">First Name</td>
         <td class="search-field">Last Name</td>
@@ -9,13 +10,42 @@
         <td class="search-field">Role</td>
       </tr>
       <tr>  
-        <td><input class="text" type="text" name="UserID" value="" id="UserID" size="20"></td>
-        <td><input class="text" type="text" name="PEIN" value="" id="PEIN" size="20"></td>
-        <td><input class="text" type="text" name="FirstName" value="" id="FirstName" size="50"></td>
-        <td><input class="text" type="text" name="LastName" value="" id="LastName" size="50"></td>
+        <td><input #userID class="text" formControlName="userID" size="20"></td>
+        <td><input #PEIN class="text" formControlName="PEIN" size="20"></td>
+        <td><input #firstName class="text" formControlName="firstName" size="50"></td>
+        <td><input #lastName class="text" formControlName="lastName" size="50"></td>
         <td><input class="text" type="text" name="Manager" value="" id="Manager" size="100"></td>
-        <td><input class="text" type="text" name="Role" value="" id="Role" size="20"></td>
+        <td><select class="text" type="select" name="Role" value="" id="Role" size="20"></select></td>
       </tr>
     </table>
-
+    <table border="0" class="search-frame2" align="right">
+      <tr>  
+        <td> <input class="search-button" (click)="search()"  type="button" name="Search" value="Search">
+        </td>
+      </tr>
+    </table>
+    </form>
   </div>
+
+  <div *ngIf="searchService.result.length > 0">
+    <div class="search-result">
+      <table border="1" class="search-frame1">
+        <tr>  
+          <th class="search-field"><label for="userID">User ID</label></th>
+          <th class="search-field">PEIN</th>
+          <th class="search-field">First Name</th>
+          <th class="search-field">Last Name</th>
+          <th class="search-field">Manager</th>
+          <th class="search-field">Role</th>
+        </tr>
+              <tr *ngFor='let result of searchService.result'>
+                  <td> {{result.userID}} </td>
+              <td> {{result.PEIN}} </td>
+              <td> {{result.firstName}} </td>
+              <td> {{result.lastName}} </td>
+              <td>  </td>
+              <td>  </td>
+            </tr>
+    </table>
+      </div>
+    </div>

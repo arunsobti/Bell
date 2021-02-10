@@ -7,6 +7,9 @@ import { TopbarComponent } from './topbar/topbar.component';
 import { NavbarComponent } from './Navbar/Navbar.component';
 import { SearchComponent } from './search/search.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [			
     AppComponent,
@@ -16,7 +19,8 @@ import { SearchComponent } from './search/search.component';
    ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
