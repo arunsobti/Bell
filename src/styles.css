@@ -42,17 +42,6 @@
     background: #ffffff;
 }
 
-.search-result {
-
-    position: absolute;
-    width: 1000px;
-    height: 170px;
-    left: 300px;
-    top: 350px;
-    /* Secondary / White */
-
-    background: #ffffff;
-}
 
 .search-frame1 {
 align-items: center;
@@ -141,294 +130,87 @@ color: #FFFFFF;
 
 }
 
+.search-result {
 
-.navbarHeadText {
-    position: static;
-    height: 18px;
-    left: 14px;
-    right: 0px;
-    top: calc(50% - 18px/2);
-    
-    /* Body / Body */
-    
-    font-family: Arial;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 18px;
-    /* identical to box height, or 129% */
-    
-    display: flex;
-    align-items: center;
-    
-    /* Secondary / White */
-    
-    color: #FFFFFF;
-    
-    /* Inside Auto Layout */
-    
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    margin: 0px 5px;
-}
-
-
-.a {
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
-
-/* Customer info */
-
-.form-details-title {
     position: absolute;
-    width: 900.19px;
-    height: 18px;
-    left: 0.17px;
-    top: 0px;
+    width: 1000px;
+    height: 170px;
+    left: 300px;
+    top: 350px;
+    /* Secondary / White */
+    padding: 0px;
+    background: #ffffff;
+}
+
+table.result {
+    align-items: left;
+    padding: 0px;
+    
+    width: 940px;
+    height: 59px;
+    vertical-align: middle;
     }
-    
-    .form-labels {
-        position: static;
-        width: 115.33px;
-        left: 0px;
-        top: 0%;
-        bottom: 0%;
-        
-        /* Fields / Field Label */
-        
-        font-family: Arial;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 18px;
-        /* identical to box height, or 129% */
-        
-        text-align: right;
-        
-        /* Secondary / Gray Dark */
-        
-        color: #111111;
-        
-        /* Inside Auto Layout */
-        
-        flex: none;
-        order: 0;
-        flex-grow: 0;
-        margin: 0px 15px;    
-    }
-    /* Title / XSmall title */
-    
-    
-    .form-data-right{
-        position: static;
-    width: 168px;
-    left: 125.33px;
-    top: 0%;
-    bottom: 50%;
-    
-    /* Body / Body */
-    
+
+table.result th {
+    background: #404040;
+    width: 170px;
+    height: 34px;
+    padding: 0px;
+    border: 0px solid #D4D4D4;
+    text-align: left;
+    padding: 2px;
+
     font-family: Arial;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 18px;
-    /* identical to box height, or 129% */
+    line-height: 14px;
+    color: #FFFFFF;
+}
+
+
+table.result tr:nth-child(odd) {
     
-    text-align: right;
-    
-    /* Status / Red */
-    
-    color: #BD2025;
-    
-    /* Inside Auto Layout */
-    
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    margin: 0px 10px;
-    }
-    
-    .form-data-left{
-        position: static;
-        width: 486.33px;
-        left: 130.33px;
-        top: 0%;
-        bottom: 0%;
-        
-        /* Body / Body */
-        
-        font-family: Arial;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 18px;
-        /* identical to box height, or 129% */
-        
-        
-        /* Secondary / Gray Medium */
-        
-        color: #555555;
-        
-        /* Inside Auto Layout */
-        
-        flex: none;
-        order: 1;
-        flex-grow: 0;
-        margin: 0px 15px;  
-    }
-    
-    .navlogoTitle {
-        position: static;
-        height: 33px;
-        left: 41.48%;
-        right: 0%;
-        top: calc(50% - 33px/2);
-        
-        /* Navbar / Product name / Desktop / 2 lines */
-        
-        font-family: BellSlim;
-        font-style: normal;
-        font-weight: 900;
-        font-size: 16px;
-        line-height: 16px;
-        /* or 103% */
-        
-        letter-spacing: -0.497778px;
-        
-        color: #FFFFFF;
-        
-        
-        /* Inside Auto Layout */
-        
-        flex: none;
-        order: 2;
-        flex-grow: 0;
-        margin: 0px 10px;
-    }
-    
-    .main-display-window{
-        /* Frame 42 */
-    
-    
-    /* Auto Layout */
-    
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 30px;
-    
-    position: static;
-    width: 1000.33px;
-    height: 4609.17px;
-    left: -0.17px;
-    top: 0px;
-    
+    color: black;
+
+
+    padding: 0px;
+
+    width: 200px;
+    height: 30px;
+    left: 0px;
+    top: 34px;
+
     /* Secondary / White */
-    
+
     background: #FFFFFF;
-    
-    /* Inside Auto Layout */
-    
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin: 45px 0px;
-    }
-
-.triangle{
-/* Triangle */
-position: absolute;
-width: 9px;
-height: 5px;
-left: calc(50% - 9px/2);
-top: calc(50% - 5px/2);
-
-/* Secondary / White */
-
-background: #FFFFFF;
-}
-
-table { 
-    border-spacing: 10px;
-    border-collapse: separate;
-}
-
-.topGreyDisplay
-{
-    background-color: #f7f0f0;
-    width: 100%;
-    height: 100px;
-    left: 130.33px;
-    top: 200px;
-}
-
-.greyAreaText{
-    position: static;
-    left: 13.04%;
-    right: 0%;
-    top: 6.25%;
-    bottom: 6.25%;
-    
-    /* Button / Operational / Default */
-    
+    /* Secondary / Gray Keyline */
     font-family: Arial;
     font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
+    font-weight: normal;
+    font-size: 14px;
     line-height: 14px;
-
-    color: #003778;
-    
-    /* Inside Auto Layout */
-    
-    flex: none;
-    order: 1;
-    align-self: center;
-    flex-grow: 0;
-    margin: 0px 5px;
 }
 
-.greyAreaTextBigger{
-    position: static;
-    left: 13.04%;
-    right: 0%;
-    top: 6.25%;
-    bottom: 6.25%;
+table.result tr:nth-child(even) {
     
-    /* Button / Operational / Default */
-    
+    color: black;
+
+    padding: 0px;
+
+
+    width: 200px;
+    height: 30px;
+    left: 0px;
+    top: 34px;
+
+    /* Secondary / White */
+
+    background: #F4F4F4;
+    /* Secondary / Gray Keyline */
     font-family: Arial;
     font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
+    font-weight: normal;
+    font-size: 14px;
     line-height: 14px;
-
-    color:black;
-    
-    /* Inside Auto Layout */
-    
-    flex: none;
-    order: 1;
-    align-self: center;
-    flex-grow: 0;
-    margin: 0px 5px;
-}
-
-.left {
- align-items: left;
- text-align: left;
-}
-
-.right {
-    align-items: right;
-    text-align: right;
-}
-
-.center {
-    align-items: right;
-    text-align: center;
 }
