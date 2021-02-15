@@ -13,6 +13,8 @@ import { SharedService} from './shared.service';
 import {HttpClientModule} from '@angular/common/http';
 import { IssueComponent } from './issue/issue.component';
 import { ModalModule } from './_modal';
+import { AdminComponent } from './Navbar/admin/admin.component';
+import { AccountComponent } from './Navbar/account/account.component';
 
 @NgModule({
   declarations: [				
@@ -23,6 +25,8 @@ import { ModalModule } from './_modal';
       HomeComponent,
       CustomerComponent,
       IssueComponent
+      AdminComponent,
+      AccountComponent
    ],
   imports: [
     BrowserModule,

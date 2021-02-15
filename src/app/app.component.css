@@ -1,0 +1,13 @@
+.headerWrapper{
+    order:1;
+    flex:1;
+    margin: 0;
+}
+.contentWrapper{
+    height: 100%;
+    order: 2;
+    display: flex;
+    flex-direction: row;
+    flex:1;
+    margin:0;
+}
