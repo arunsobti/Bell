@@ -11,22 +11,26 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { SharedService} from './shared.service';
 import {HttpClientModule} from '@angular/common/http';
+import { IssueComponent } from './issue/issue.component';
+import { ModalModule } from './_modal';
 
 @NgModule({
-  declarations: [			
+  declarations: [				
     AppComponent,
       TopbarComponent,
       NavbarComponent,
       SearchComponent,
       HomeComponent,
-      CustomerComponent
+      CustomerComponent,
+      IssueComponent
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ModalModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]

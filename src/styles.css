@@ -142,6 +142,16 @@ color: #FFFFFF;
     background: #ffffff;
 }
 
+table {
+    align-items: left;
+    padding: 0px;
+    
+    width: 940px;
+    height: 59px;
+    vertical-align: middle;
+}
+
+
 table.result {
     align-items: left;
     padding: 0px;
