@@ -11,7 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { SharedService} from './shared.service';
 import {HttpClientModule} from '@angular/common/http';
-import { IssueComponent } from './issue/issue.component';
+import { IssueComponent } from '../issue/issue.component';
 import { ModalModule } from './_modal';
 import { AdminComponent } from './Navbar/admin/admin.component';
 import { AccountComponent } from './Navbar/account/account.component';
