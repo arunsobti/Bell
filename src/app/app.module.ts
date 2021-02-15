@@ -24,7 +24,7 @@ import { AccountComponent } from './Navbar/account/account.component';
       SearchComponent,
       HomeComponent,
       CustomerComponent,
-      IssueComponent
+      IssueComponent,
       AdminComponent,
       AccountComponent
    ],
