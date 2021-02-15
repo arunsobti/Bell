@@ -11,6 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { SharedService} from './shared.service';
 import {HttpClientModule} from '@angular/common/http';
+import { AdminComponent } from './Navbar/admin/admin.component';
+import { AccountComponent } from './Navbar/account/account.component';
 
 @NgModule({
   declarations: [			
@@ -19,7 +21,9 @@ import {HttpClientModule} from '@angular/common/http';
       NavbarComponent,
       SearchComponent,
       HomeComponent,
-      CustomerComponent
+      CustomerComponent,
+      AdminComponent,
+      AccountComponent
    ],
   imports: [
     BrowserModule,

@@ -1,37 +1,86 @@
-<div class="navbar">
-    <table>
-        <tr><td><a class="navbarHeadText a" routerLink="search">Search</a></td></tr>
-        <tr><td><p> </p></td></tr>
-        <tr><td><a class="navbarHeadText a" routerLink="customer">Workflow</a></td></tr>
-        <tr><td><p> </p></td></tr>
-        <tr><td><a class="navbarHeadText a" routerLink="customer">MASTNAC creation and modification</a></td></tr>
-        <tr><td><p> </p></td></tr>
-        <tr><td><img  src="/assets/Triangle.png"> <a class="navbarHeadText a" routerLink="customer">Account Details</a></td></tr>
-        <tr><td><p> </p></td></tr>
-        <tr><td><a class="navbarHeadText a" routerLink="customer">Account details</a></td></tr>
-        <tr><td><p> </p></td></tr>
-        <tr><td><a class="navbarHeadText a" routerLink="customer">Action</a></td></tr>
-        <tr><td><p> </p></td></tr>
-        <tr><td><a class="navbarHeadText a" routerLink="customer">Action History</a></td></tr>
-        <tr><td><p> </p></td></tr>
-        <tr><td><a class="navbarHeadText a" routerLink="customer">Issue</a></td></tr>
-        <tr><td><p> </p></td></tr>
-        <tr><td><a class="navbarHeadText a" routerLink="customer">Issue History</a></td></tr>
-        <tr><td><p> </p></td></tr>
-        <tr><td><a class="navbarHeadText a" routerLink="customer">Collection History</a></td></tr>
-        <tr><td><p> </p></td></tr>
-        <tr><td><a class="navbarHeadText a" routerLink="customer">MASTNAC details</a></td></tr>
-        <tr><td><p> </p></td></tr>
-        <tr><td><a class="navbarHeadText a" routerLink="customer">Negotiation</a></td></tr>
-        <tr><td><p> </p></td></tr>
-        <tr><td><a class="navbarHeadText a" routerLink="customer">Negotiation History</a></td></tr>
-        <tr><td><p> </p></td></tr>
-        <tr><td><a class="navbarHeadText a" routerLink="customer">AR activity</a></td></tr>
-        <tr><td><p> </p></td></tr>
-        <tr><td><a class="navbarHeadText a" routerLink="customer">Action Reconciliation</a></td></tr>
-        <tr><td><p> </p></td></tr>
-        <tr><td><img  src="/assets/Triangle.png"> <a class="navbarHeadText a" routerLink="customer">Administator</a></td></tr>
-        <tr><td><p> </p></td></tr>
-    </table>
-    
+<div class="navWrapper">
+    <div class="navContainer">
+        <div class="menu-item-wrapper">
+            <div class="menu-item">
+                <div class="menu-item-text-wrapper">
+                    <a class="menu-item-text" routerLink=customer>Search</a>
+                </div>
+                <div class="left-menu-item-line"></div> 
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-text-wrapper">
+                    <a class="menu-item-text" href="#">Workflow</a>
+                </div>
+                <div class="left-menu-item-line"></div> 
+            </div>
+            <div class="menu-item" style="height:66px;">
+                <div class="menu-item-text-wrapper">
+                    <a class="menu-item-text extra-height" href="#">MASTNAC creation and modification</a>
+                </div>
+                <div class="left-menu-item-line"></div> 
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-text-wrapper">
+                    <a class="menu-item-text" href="#">Letters</a>
+                </div>
+                <div class="left-menu-item-line"></div> 
+            </div>
+            
+            <div *ngIf="enableAdmin && !enableAccount" class="menu-item">
+                <div class="menu-item-text-wrapper">
+                    <img style="margin-right:2px;" src="/assets/Triangle.png"  alt="image">
+                    <a class="menu-item-text" href="#">Administrator</a>
+                </div>
+            </div>
+
+            <div *ngIf="enableAccount && !enableAdmin" class="menu-item">
+                <div class="menu-item-text-wrapper">
+                    <img style="margin-right:2px;" src="/assets/Triangle.png"  alt="image">
+                    <a class="menu-item-text" href="#">Account details</a>
+                </div>
+            </div>
+
+        </div>   
+       <!--  <div class="child-menu-item-container">
+            <div class="child-menu-item-text-wrapper">
+                <a class="child-menu-item-text" href="#">Employee search</a>
+            </div>
+            <div class="child-menu-item-text-wrapper">
+                <a class="child-menu-item-text" href="#">Agent portfolio</a>
+            </div>
+            <div class="child-menu-item-text-wrapper">
+                <a class="child-menu-item-text" href="#">Workflow criteria</a>
+            </div>
+            <div class="child-menu-item-text-wrapper">
+                <a class="child-menu-item-text" href="#">Follow up criteria</a>
+            </div>
+            <div class="child-menu-item-text-wrapper">
+                <a class="child-menu-item-text extra-height"  href="#">Collection path management</a>
+            </div>
+            <div class="child-menu-item-text-wrapper">
+                <a class="child-menu-item-text" href="#">Strategy criteria</a>
+            </div>
+            <div class="child-menu-item-text-wrapper">
+                <a class="child-menu-item-text" href="#">Plan criteria</a>
+            </div>
+            <div class="child-menu-item-text-wrapper">
+                <a class="child-menu-item-text" href="#">Path edit criteria</a>
+            </div>
+            <div class="child-menu-item-text-wrapper">
+                <a class="child-menu-item-text" href="#">Exception</a>
+            </div>
+            <div class="child-menu-item-text-wrapper">
+                <a class="child-menu-item-text" href="#">Letter code</a>
+            </div>
+            <div class="child-menu-item-text-wrapper">
+                <a class="child-menu-item-text extra-height"  href="#">Agency distribution criteria</a>
+            </div>
+        </div> -->
+        <div *ngIf="enableAdmin && !enableAccount" class="child-menu-item-wrapper">
+            <app-admin></app-admin>    
+        </div>
+        <div *ngIf="enableAccount && !enableAdmin" class="child-menu-item-wrapper">
+            <app-account></app-account>>
+        </div>
+    </div>
 </div>

@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+    display: flex;
+    flex-direction: column;
+    margin:0;
+}
+
 .header{
 	position: absolute;
 	left: 0%;
@@ -9,14 +16,6 @@
 	height:50px;
 	background: #00549A;
 }
-
-.topbar_img {
-    position:relative; 
-    left:50px; 
-    top:10px;
-    border:none;
- }
-
 
  .navbar{
 	position: absolute;
