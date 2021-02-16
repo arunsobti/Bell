@@ -34,7 +34,7 @@ import { AccountComponent } from './Navbar/account/account.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    ModalModule
+    ModalModule,
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]

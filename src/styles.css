@@ -1,11 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-
-body{
-    display: flex;
-    flex-direction: column;
-    margin:0;
-}
-
 .header{
 	position: absolute;
 	left: 0%;
@@ -16,6 +9,14 @@ body{
 	height:50px;
 	background: #00549A;
 }
+
+.topbar_img {
+    position:relative; 
+    left:50px; 
+    top:10px;
+    border:none;
+ }
+
 
  .navbar{
 	position: absolute;
@@ -81,7 +82,33 @@ margin: 15px 0px;
 padding: 15px;
     }
 
-.search-field {
+    .readonly {
+        border: 1px solid #D4D4D4;
+        box-sizing: border-box;
+        border-radius: 4px;
+        width: 160px;
+        height: 36px;
+        background-color: lightgray;
+        }
+    
+    .textarea {
+        border: 1px solid #D4D4D4;
+        box-sizing: border-box;
+        border-radius: 4px;
+        height: 36px;
+    padding: 15px;
+        }
+    
+.select {
+    border: 1px solid #D4D4D4;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 160px;
+    height: 36px;
+    }
+    
+
+    .search-field {
     font-family: Arial;
 font-style: normal;
 font-weight: bold;
@@ -93,7 +120,7 @@ color: #111111;
 
 }
 
-.search-button {
+.button {
     display: flex;
     flex-direction: row;
     align-items: center;
