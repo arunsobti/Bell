@@ -40,6 +40,31 @@
     order:3;
 }
 
+.logo-image-1{
+    position: absolute;
+    width: 4px;
+    height: 8px;
+    left: calc(50% - 4px/2 + 7px);
+    top: calc(50% - 8px/2);
+}
+
+.logo-image-3{
+    position: absolute;
+    width: 12px;
+    height: 1px;
+    left: calc(50% - 12px/2 + 3px);
+    top: calc(50% - 1px/2 + 0.5px);
+}
+
+.logo-image-5{
+    position: absolute;
+    width: 11px;
+    height: 18px;
+    left: calc(50% - 11px/2 - 3.5px);
+    top: calc(50% - 18px/2);
+}
+
+
 .toolbar-container{
     flex:1;
     display:flex;
@@ -87,6 +112,29 @@
     width: 18px; 
     height: 20px; 
     top:8px;
+}
+
+.bct-help-container{
+    margin-left: 15px;
+    position: absolute; 
+    width: 18px; 
+    height: 20px; 
+}
+
+.bct-help-image-common{
+    position: absolute;  
+    width: 4px; 
+    height: 0px; 
+    left: calc(50% - 4px/2 - 7px); 
+    border: 1.5px solid #FFFFFF;
+}
+
+.bct-help-rectangle{
+    position: absolute; 
+    width: 16px; 
+    height: 20px;
+    left: calc(50% - 16px/2 + 1px);
+    top: calc(50% - 20px/2);
 }
 .toolbar-second-separator{
     left: 48.52%;

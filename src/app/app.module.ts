@@ -17,6 +17,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { SubNavComponent } from './Navbar/sub-nav/sub-nav.component';
 import { IssueComponent } from '../issue/issue.component';
 import { ModalModule } from './_modal';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ModalModule } from './_modal';
       CustomerComponent,
       IssueComponent,
       SubNavComponent,
+      HeaderComponent,
    ],
   imports: [
     BrowserModule,

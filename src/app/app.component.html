@@ -1,13 +1,18 @@
-<app-topbar></app-topbar>
-<app-Navbar></app-Navbar>
-<<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" />
 <div  class="topGreyDisplay">
 <div class="headerWrapper">
     <app-topbar></app-topbar>
 </div>    
 <div class="contentWrapper">
     <app-Navbar></app-Navbar>
-    <!--Home page router-->
+    <div class="pageContent">
+        <div class="pageHeader">
+            <app-header></app-header>
+        </div>
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
 </div>
 <!-- <div  class="topGreyDisplay">
     <table class="topGreyDisplay">
@@ -25,4 +30,3 @@
     </table>
 </div> -->
 
-<router-outlet></router-outlet>
