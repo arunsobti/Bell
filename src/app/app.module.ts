@@ -18,6 +18,7 @@ import { SubNavComponent } from './Navbar/sub-nav/sub-nav.component';
 import { IssueComponent } from '../issue/issue.component';
 import { ModalModule } from './_modal';
 
+
 @NgModule({
   declarations: [				
       AppComponent,
