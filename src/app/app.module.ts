@@ -10,19 +10,23 @@ import { CustomerComponent } from './customer/customer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { SharedService} from './shared.service';
+
 import { HttpClientModule } from '@angular/common/http';
 import { UniversalTranslateLoader} from './shared/localization/universal-translate-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { SubNavComponent } from './Navbar/sub-nav/sub-nav.component';
+import { IssueComponent } from '../issue/issue.component';
+import { ModalModule } from './_modal';
 
 @NgModule({
-  declarations: [			
-    AppComponent,
+  declarations: [				
+      AppComponent,
       TopbarComponent,
       NavbarComponent,
       SearchComponent,
       HomeComponent,
       CustomerComponent,
+      IssueComponent,
       SubNavComponent,
    ],
   imports: [
@@ -31,14 +35,18 @@ import { SubNavComponent } from './Navbar/sub-nav/sub-nav.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    ModalModule,
     TranslateModule.forRoot({
-      loader : {
-        provide:TranslateLoader,
-        useClass: UniversalTranslateLoader
+      loader: {
+        provide: TranslateLoader,
+        useClass:UniversalTranslateLoader
       }
     })
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+
+}

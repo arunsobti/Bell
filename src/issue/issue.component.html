@@ -1,0 +1,45 @@
+<div >
+  <div class="search-result">
+    <input #customerId class="text" formControlName="customerId" size="20">
+    <input class="search-button" (click)="search(customerId.value)"  type="button" name="Search" value="Search">
+    <br>
+
+    <table border="0">
+      <tr>
+        <td>
+          <h2>Issues</h2>
+        </td>
+        <td align="right">
+          <button class="fas fa-plus fa-2x" (click)="modalService.open('issue-modal')">New</button>
+        </td>
+      </tr>
+    </table>
+
+
+
+    <table border="0" class="result">
+      <tbody>
+      <tr>  
+        <th>Issue creation date</th>
+        <th>Issue tracking date</th>
+        <th>Ammount</th>
+        <th>User last updated</th>
+      </tr>
+
+
+      <tr *ngFor='let result of issueService.result'>
+        <td> {{result.creationDate}} </td>
+        <td> {{result.trackingDate}} </td>
+        <td> {{result.amount}} </td>
+        <td> {{result.updatedBy}} </td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+</div>
+
+<jw-modal id="issue-modal">
+  <p>Test</p>
+  <button class="fas fa-close fa-2x" (click)="modalService.close('issue-modal')">close</button>
+</jw-modal>
+0
