@@ -15,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UniversalTranslateLoader} from './shared/localization/universal-translate-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { SubNavComponent } from './Navbar/sub-nav/sub-nav.component';
-import { IssueComponent } from '../issue/issue.component';
+import { IssueComponent } from './issue/issue.component';
 import { ModalModule } from './_modal';
 import { HeaderComponent } from './header/header.component';
 

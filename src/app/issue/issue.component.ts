@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { IssueService} from '../services/issue.service'
-import { ModalService } from '../app/_modal';
+import { IssueService} from '../../services/issue.service'
+import { ModalService } from '../_modal';
 
 @Component({
   selector: 'app-issue',
