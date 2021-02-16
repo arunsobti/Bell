@@ -10,8 +10,19 @@ import { ModalService } from '../app/_modal';
 })
 export class IssueComponent implements OnInit {
 
-    constructor(public issueService: IssueService, public modalService: ModalService) { 
-    }
+  issueForm = new FormGroup ({
+    issue: new FormControl(""),
+    creationDate: new FormControl(""),
+    issueTrackingDate: new FormControl(""),
+    status: new FormControl(""),
+    amount: new FormControl(""),
+    updatedBy: new FormControl(""),
+    remark: new FormControl("")
+  });
+
+
+  constructor(public modalService: ModalService, public issueService: IssueService) { 
+  }
   
   ngOnInit() {
   }
@@ -23,6 +34,6 @@ export class IssueComponent implements OnInit {
         this.issueService.search(customerId);
     
   }
-    
+
 
 }
