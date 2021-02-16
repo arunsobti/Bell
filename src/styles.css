@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    display: flex;
+    flex-direction: column;
+    margin:0;
+}
+
 .header{
 	position: absolute;
 	left: 0%;
@@ -29,47 +35,38 @@
 	background: #00549A;
 }
 
-
 .search {
-
     position: absolute;
     width: 1000px;
     height: 170px;
     left: 300px;
     top: 150px;
     /* Secondary / White */
-
     background: #ffffff;
 }
 
-
 .search-frame1 {
-align-items: center;
-padding: 5px;
-
-position: static;
-width: 940px;
-height: 59px;
-left: 30px;
-top: 30px;
+    align-items: center;
+    padding: 5px;
+    position: static;
+    width: 940px;
+    height: 59px;
+    left: 30px;
+    top: 30px;
 }
 
 .search-frame2 {
-padding: 0px;
-
-position: static;
-width: 100px;
-height: 36px;
-left: 825px;
-top: 104px;
-
-
-/* Inside Auto Layout */
-
-flex: none;
-order: 1;
-flex-grow: 0;
-margin: 15px 0px;
+    padding: 0px;
+    position: static;
+    width: 100px;
+    height: 36px;
+    left: 825px;
+    top: 104px;
+    /* Inside Auto Layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 15px 0px;
 }
 
 
@@ -79,8 +76,8 @@ margin: 15px 0px;
     border-radius: 4px;
     width: 160px;
     height: 36px;
-padding: 15px;
-    }
+    padding: 15px;
+}
 
     .readonly {
         border: 1px solid #D4D4D4;
@@ -110,14 +107,12 @@ padding: 15px;
 
     .search-field {
     font-family: Arial;
-font-style: normal;
-font-weight: bold;
-font-size: 14px;
-line-height: 18px;
-padding: 15px;
-
-color: #111111;
-
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 15px;
+    color: #111111;
 }
 
 .button {
@@ -131,33 +126,24 @@ color: #111111;
     height: 36px;
     right: 0px;
     top: 0px;
-    
     /* Buttons / Primary / Light Theme / Normal */
-    
     background: linear-gradient(180deg, rgba(0, 55, 120, 0.9) 5.31%, #003778 98.26%);
     /* Secondary / Blue Medium */
-    
     border: 1px solid #003778;
     box-sizing: border-box;
     border-radius: 8px;
-    
     /* Inside Auto Layout */
-    
     flex: none;
     order: 1;
     flex-grow: 0;
     margin: 0px 15px;
     align-items: center;
-text-align: center;
-
-/* Secondary / White */
-
-color: #FFFFFF;
-
+    text-align: center;
+    /* Secondary / White */
+    color: #FFFFFF;
 }
 
 .search-result {
-
     position: absolute;
     width: 1000px;
     height: 170px;
@@ -171,21 +157,18 @@ color: #FFFFFF;
 table {
     align-items: left;
     padding: 0px;
-    
     width: 940px;
     height: 59px;
     vertical-align: middle;
 }
 
-
 table.result {
     align-items: left;
     padding: 0px;
-    
     width: 940px;
     height: 59px;
     vertical-align: middle;
-    }
+}
 
 table.result th {
     background: #404040;
@@ -206,19 +189,13 @@ table.result th {
 
 
 table.result tr:nth-child(odd) {
-    
     color: black;
-
-
     padding: 0px;
-
     width: 200px;
     height: 30px;
     left: 0px;
     top: 34px;
-
     /* Secondary / White */
-
     background: #FFFFFF;
     /* Secondary / Gray Keyline */
     font-family: Arial;
@@ -229,19 +206,13 @@ table.result tr:nth-child(odd) {
 }
 
 table.result tr:nth-child(even) {
-    
     color: black;
-
     padding: 0px;
-
-
     width: 200px;
     height: 30px;
     left: 0px;
     top: 34px;
-
     /* Secondary / White */
-
     background: #F4F4F4;
     /* Secondary / Gray Keyline */
     font-family: Arial;

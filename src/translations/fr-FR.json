@@ -1,0 +1,41 @@
+{
+    "BCT":"[FR]Business Collection Tool",
+    "Header" : {
+        "lang" : "EN"
+    },
+    "Nav" : {
+        "search" : "[FR]Search",
+        "workflow": "[FR]Workflow",
+        "MASTNAC" : "[FR]MASTNAC creation and modification",
+        "letters": "[FR]Letters",
+        "accountDetails" : {
+            "title" : "[FR]Account details",
+            "action" : "[FR]Action",
+            "actionHistory" : "[FR]Action history",
+            "issue" : "[FR]Issue",
+            "issueHistory" : "[FR]Issue history",
+            "collectionHistory" : "[FR]Collection history",
+            "mastnacDetail" : "[FR]MASTNAC details",
+            "negotiation" : "[FR]Negotiation",
+            "negotiationHistory" : "[FR]Negotiation history",
+            "arActivity" : "[FR]AR activity",
+            "arReconciliation" : "[FR]AR reconciliation"
+        },
+        "administrator" : {
+            "title" : "[FR]Administrator",
+            "employeeSearch" : "[FR]Employe search",
+            "agentPortfolio" : "[FR]Agent portfolio",
+            "workflowCriteria" : "[FR]Workflow criteria",
+            "followupCriteria" : "[FR]Follow up criteria",
+            "collectionPathManagement" : "[FR]Collection path management",
+            "strategyCriteria" : "[FR]Strategy criteria",
+            "planCriteria" : "[FR]Plan criteria",
+            "pathEditCriteria" : "[FR]Path edit criteria",
+            "exception" : "[FR]Exception",
+            "letterCode" : "[FR]Letter code",
+            "agencyDistributionCriteria" : "[FR]Agency distribution criteria"
+        }
+
+    }
+}
+

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-Navbar',
@@ -7,12 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  enableAdmin = false;
-  enableAccount = true;
+  enableAdmin:boolean = false;
+  enableAccount:boolean = true;
+  langCode: string;
+  submenu: string = "";
 
-  constructor() { }
+  constructor(public translate: TranslateService) {
+    this.langCode = translate.currentLang;
+   
+   }
 
   ngOnInit() {
+    this.submenu = "admin";
+    this.enableAdmin = true;
+    this.enableAccount = false;
   }
 
 }
