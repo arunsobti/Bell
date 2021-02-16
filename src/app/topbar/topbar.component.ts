@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
   
 
 @Component({
@@ -8,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private translate: TranslateService) { }
 
   ngOnInit() {
   }
 
+  changeLang(e: Event){
+    e.preventDefault();
+    console.log("Change language event fired");
+    const curLang = this.translate.currentLang;
+    this.translate.use(curLang === 'en' ? 'fr' : 'en');
+  }
 }

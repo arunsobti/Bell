@@ -22,9 +22,9 @@ export class CustomerComponent implements OnInit {
  
 
   getCustomerList() {
-    this.service.getCustomerList().subscribe(data =>{
+    /* this.service.getCustomerList().subscribe(data =>{
       this.CustomerList=data;
-    });
+    }); */
 
   }
 }

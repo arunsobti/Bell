@@ -18,7 +18,7 @@
       <img src="/assets/Rectangle.png"  alt="image">
     </div>
     <div class="logout">
-      <div class="logoutButton">       
+      <div class="logoutButton">      
         <img style="position: absolute;width: 11px;height: 18px;left: calc(50% - 11px/2 - 3.5px);top: calc(50% - 18px/2);" src="/assets/Stroke5.png">
         <img style="position: absolute;width: 12px;height: 1px;left: calc(50% - 12px/2 + 3px);top: calc(50% - 1px/2 + 0.5px);" src="/assets/Stroke3.png">
         <img style="position: absolute;width: 4px;height: 8px;left: calc(50% - 4px/2 + 7px);top: calc(50% - 8px/2);" src="/assets/Stroke1.png">
@@ -37,7 +37,7 @@
     <img src="/assets/Rectangle.png"  alt="image">
   </div>
   <div class="locale">
-    <span>FR</span>
+    <a class="locale-text" href="" (click)="changeLang($event)" id="language-toggle"><span [innerHTML]="'default.Header.lang' | translate" ></span></a>
   </div>
   </div>
 </div> 

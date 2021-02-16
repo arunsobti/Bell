@@ -99,20 +99,22 @@
     margin-left:35px;
 }
 .locale{
-    position: static;
     height: 18px;
     left: 92.96%;
     right: 0%;
     top: calc(50% - 18px/2);
+    flex: none;
+    order: 5;
+    flex-grow: 0;
+    margin: 0px 20px;
+} 
 
+.locale-text{
     font-family: Arial;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 18px;
     color: #FFFFFF;
-    flex: none;
-    order: 5;
-    flex-grow: 0;
-    margin: 0px 20px;
+    text-decoration: none;
 }
