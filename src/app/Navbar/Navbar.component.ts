@@ -20,6 +20,8 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.submenu = "admin";
+    this.enableAdmin = true;
+    this.enableAccount = false;
   }
 
 }

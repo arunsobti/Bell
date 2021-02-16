@@ -14,7 +14,7 @@ export class SubNavComponent implements OnInit {
 
   @Input() submenu: string = "";
   ngOnInit(): void {
-
+    
     this.enableAccount = (this.submenu === 'account');
     this.enableAdmin = (this.submenu === 'admin');
   }
