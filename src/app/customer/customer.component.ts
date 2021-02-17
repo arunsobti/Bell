@@ -12,7 +12,7 @@ export class CustomerComponent implements OnInit {
   constructor(private service:SharedService) { }
 
   @Input() customer:any;
-  CustomerList:any=[];
+  @Input() CustomerList:any=[];
 
   ngOnInit(): void {
     this.getCustomerList();
@@ -22,9 +22,9 @@ export class CustomerComponent implements OnInit {
  
 
   getCustomerList() {
-    /* this.service.getCustomerList().subscribe(data =>{
+    this.service.getCustomerList().subscribe(data =>{
       this.CustomerList=data;
-    }); */
+    });
 
   }
 }
