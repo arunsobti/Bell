@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/shared.service'
+import { IssueComponent } from 'src/app/issue/issue.component';
 
 
 @Component({

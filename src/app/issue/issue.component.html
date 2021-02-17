@@ -1,15 +1,24 @@
-<div >
-  <div class="search">
 
+<br>
+<br>
+<hr>
     <table border="0">
-
- 
       <tr>
-        <td>
-          <h2>Issues</h2>
+        <td align="left" class="dataNumber"><br>Issues<br></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td align="right"><br><a href="" onclick="showHide('customerDataBody');return false;"><img class="greyAreaImages" src="/assets/oval_snapshot.png"></a><br></td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <h3>2 Results</h3>
         </td>
-        <td align="right">
-          <button class="button" (click)="modalService.open('issue-modal')">+&nbsp;New</button>
+        <td colspan="3" align="right">
+          <!--<button class="button" (click)="modalService.open('issue-modal')">+&nbsp;New</button>-->
+          <a href="" (click)="modalService.open('issue-modal')"><img style="height:30px;" src="/assets/history.png"></a> &nbsp;
+          <a href="" (click)="modalService.open('issue-modal')"><img style="height:30px;" src="/assets/new.png"></a> &nbsp;
         </td>
       </tr>
     </table>
@@ -34,8 +43,9 @@
       </tr>
     </tbody>
     </table>
-  </div>
-</div>
+    <br>
+    <hr>
+
 
 
 
