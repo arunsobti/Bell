@@ -1,0 +1,105 @@
+<div class="search">
+  <form [formGroup]="searchForm" >
+    <table border="0" class="search-frame1">
+      <tr>  
+        <td class="search-field"><label for="accountNumber">Account number</label></td>
+        <td><input class="text" formControlName="accountNumber" size="20"></td>
+        <td class="search-field"><label for="MASTNAC">MASTNAC</label></td>
+        <td><input  class="text" formControlName="MASTNAC" size="20"></td>
+      </tr>
+      <tr>  
+        <td class="search-field"><label for="customerNumber">Customer number</label></td>
+        <td><input class="text" formControlName="customerNumber" size="20"></td>
+        <td class="search-field"><label for="CRDDST">CRDDST</label></td>
+        <td><input  class="text" formControlName="CRDDST" size="20"></td>
+      </tr>
+      <tr>  
+        <td class="search-field"><label for="action">Action</label></td>
+        <td><select formControlName="action" class="select">
+          <option value="1st Attempt">1st Attempt</option>
+          </select>
+        </td>
+        <td class="search-field"><label for="workflow">Workflow</label></td>
+        <td><select formControlName="workflow" class="select">
+          <option value="">Select</option>
+          <option value="DD">DD</option>
+          </select>
+        </td>
+      </tr>
+      <tr>  
+        <td class="search-field"><label for="agency">Agency</label></td>
+        <td><select formControlName="agency" class="select">
+          <option value="">Select</option>
+          </select>
+        </td>
+        <td class="search-field"><label for="province">Province</label></td>
+        <td><select formControlName="province" class="select">
+          <option value="">Select</option>
+          <option value="ON">ON- Ontario</option>
+          </select>
+        </td>
+      </tr>
+      <tr>  
+        <td class="search-field"><label for="agent">Agent</label></td>
+        <td><select formControlName="agent" class="select">
+          <option value="">Select</option>
+          </select>
+        </td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>  
+        <td class="search-field"><label for="goldenKeyName">Golden key name</label></td>
+        <td><input class="text" formControlName="goldenKeyName" size="20"></td>
+        <td class="search-field"><label for="goldenKeyNumber">Golden key number</label></td>
+        <td><input class="text" formControlName="goldenKeyNumber" size="20"></td>
+      </tr>
+      <tr>  
+        <td class="search-field"><label for="subBusinessUnit">Sub business unit</label></td>
+        <td><select formControlName="subBusinessUnit" class="select">
+          </select>
+        </td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+    <table border="0" class="search-frame2" align="right">
+      <tr>  
+        <td colspan="4"> <input class="button" (click)="search()"  type="button" name="Search" value="Search">
+        </td>
+      </tr>
+    </table>
+    </form>
+  </div>
+
+  <div *ngIf="searchCustomerService.result.length > 0">
+    <div class="search-result">
+      <table border="0" class="result">
+        <tbody>
+        <tr>  
+          <th>Account Number</th>
+          <th>MASTNAC</th>
+          <th>Customer Name</th>
+          <th>SuspAmt</th>
+          <th>BalDue</th>
+          <th>Workflow</th>
+          <th>Action</th>
+          <th>Agent</th>
+        </tr>
+        <tr *ngFor='let result of searchCustomerService.result'>
+            <td> 
+              <a routerLink="/customer">{{result.accountNumber}} </a>
+            </td>
+        <td> {{result.MASTNAC}} </td>
+        <td> {{result.customerName}} </td>
+        <td> {{result.suspectAmount}} </td>
+        <td> {{result.balanceDue}} </td>
+        <td> {{result.workflow}} </td>
+        <td> {{result.action}} </td>
+        <td> {{result.agent}} </td>
+        <td>  </td>
+      </tr>
+      </tbody>
+    </table>
+      </div>
+    </div>

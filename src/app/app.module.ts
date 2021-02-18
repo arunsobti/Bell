@@ -7,6 +7,7 @@ import { TopbarComponent } from './topbar/topbar.component';
 import { NavbarComponent } from './Navbar/Navbar.component';
 import { SearchComponent } from './search/search.component';
 import { CustomerComponent } from './customer/customer.component';
+import { SearchCustomerComponent } from './customer/search-customer/search-customer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { SharedService} from './shared.service';
@@ -31,6 +32,7 @@ import { HeaderComponent } from './header/header.component';
       IssueComponent,
       SubNavComponent,
       HeaderComponent,
+      SearchCustomerComponent
    ],
   imports: [
     BrowserModule,
