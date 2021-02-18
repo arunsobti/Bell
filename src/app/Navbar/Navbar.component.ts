@@ -27,8 +27,6 @@ export class NavbarComponent implements OnInit {
 
   toggleChildMenu(e: Event){
     e.preventDefault();
-    console.log("showChildItems", this.showChildItems);
     this.showChildItems = !(this.showChildItems) ;
-    console.log("showChildItems", this.showChildItems);
   }
 }
