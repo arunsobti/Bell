@@ -98,7 +98,7 @@
           <a class="cancel" style="vertical-align: middle;" href="javaScript:e.preventDefault();" (click)="modalService.close('issue-modal')">Cancel</a> &nbsp;
         </td>
         <td align="left"> 
-          <button  style="vertical-align: middle;" class="button" (click)="save();" id="Save" value="Save">Save</button>
+          <button  style="vertical-align: middle;" class="button" (click)="save();modalService.close('issue-modal');" id="Save" value="Save">Save</button>
         </td>
       </tr>
     </table>
