@@ -30,4 +30,28 @@ export class SharedService {
     return this.http.patch(this.APIUrl + '/customer', val);
   }
 
+
+/// CUSTOMER ISSUES
+
+  // LIST CUSTOMER ISSUES(s)
+  getCustomerIssuesList(): Observable<any[]> {
+    return this.http.get<any>(this.APIUrl + '/CustomerIssues') ;
+    //return this.http.get<any>(this.APIUrl + '/customer'); <-- should be this, but we're hardoding for demo
+  }
+
+  // GET CUSTOMER
+  getCustomerIssues(val: any): Observable<any[]> {
+    return this.http.get<any>(this.APIUrl + '/CustomerIssues/1');
+  }
+  // SAVE CUSTOMER
+  addCustomerIssues(val: any) {
+    return this.http.post(this.APIUrl + '/CustomerIssues', val);
+  }
+
+  //PATCH (update) customer
+  updateCustomerIssuesr(val: any) {
+    return this.http.patch(this.APIUrl + '/CustomerIssues', val);
+  }
+
+
 }

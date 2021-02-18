@@ -3,7 +3,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { IssueService} from '../../services/issue.service'
 import { ModalService } from '../_modal';
 import {ActivatedRoute} from '@angular/router';
-
+import { SharedService} from 'src/app/shared.service';
 
 @Component({
   selector: 'app-issue',
@@ -14,24 +14,20 @@ export class IssueComponent implements OnInit {
 
   private customerId: string = "";
   private today = new Date();
-
-  issueForm = new FormGroup ({});
-
-  private initialize() {
-
-    this.issueForm = new FormGroup ({
-      recordId: new FormControl(""),
-      customerId: new FormControl(""),
-      issue: new FormControl(""),
-      creationDate: new FormControl(this.formatDate()),
-      trackingDate: new FormControl(this.formatDate()),
-      status: new FormControl(""),
-      amount: new FormControl(""),
-      updatedBy: new FormControl("ez001"),
-      remark: new FormControl("")
-    });
+  CustomerIssuesList:any=[];
   
-  }
+  issueForm = new FormGroup ({
+    recordId: new FormControl(""),
+    customerId: new FormControl(""),
+    issue: new FormControl(""),
+    creationDate: new FormControl(this.formatDate()),
+    trackingDate: new FormControl(this.formatDate()),
+    status: new FormControl(""),
+    amount: new FormControl(""),
+    updatedBy: new FormControl("ez001"),
+    remark: new FormControl("")
+  });
+
 
   private formatDate() {
     var d = new Date(),
@@ -47,18 +43,18 @@ export class IssueComponent implements OnInit {
     return [year, month, day].join('-');
 }
 
-  constructor(public modalService: ModalService, public issueService: IssueService, private route: ActivatedRoute) { 
-    this.initialize();
+  constructor(private service:SharedService, public modalService: ModalService, public issueService: IssueService, private route: ActivatedRoute) { 
   }
   
   ngOnInit() {
-
+    this.getCustomerIssuesList();
 
     this.route.queryParams.subscribe(params => {
       this.customerId = params['customerId']
       this.issueForm.value.customerId = this.customerId;
     });
-   
+
+    
 
     if (this.customerId == null) {
 
@@ -68,6 +64,11 @@ export class IssueComponent implements OnInit {
     // this.search(customerId);
   }
 
+  getCustomerIssuesList() {
+    this.service.getCustomerList().subscribe(data =>{
+      this.CustomerIssuesList=data;
+    });
+  }
   
   search() {
     if (this.customerId == null) {
@@ -82,7 +83,6 @@ export class IssueComponent implements OnInit {
     
     this.issueForm.value.customerId = this.customerId;
     this.issueService.save(this.issueForm);
-    this.initialize();
   }
 
   isShowDiv = false;
@@ -90,5 +90,5 @@ export class IssueComponent implements OnInit {
   toggleDisplayDiv() {
     this.isShowDiv = !this.isShowDiv;
   }
-  
+
 }
