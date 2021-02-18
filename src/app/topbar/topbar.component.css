@@ -8,7 +8,7 @@
     right: 0%;
 }
 .logo-container{
-    flex:4;
+    flex:5;
     display:flex;
     flex-direction: row;
     align-items: center;
@@ -40,33 +40,19 @@
     order:3;
 }
 
-.logo-image-1{
-    position: absolute;
-    width: 4px;
-    height: 8px;
-    left: calc(50% - 4px/2 + 7px);
-    top: calc(50% - 8px/2);
-}
 
-.logo-image-3{
-    position: absolute;
-    width: 12px;
-    height: 1px;
-    left: calc(50% - 12px/2 + 3px);
-    top: calc(50% - 1px/2 + 0.5px);
-}
-
-.logo-image-5{
-    position: absolute;
-    width: 11px;
-    height: 18px;
-    left: calc(50% - 11px/2 - 3.5px);
-    top: calc(50% - 18px/2);
+.logout-image{
+    width: 18px;
+    height: 20px;
+    left: 192px;
+    top: 1px;
+    flex: none;
+    order: 3;
+    flex-grow: 0;
 }
 
 
 .toolbar-container{
-    flex:1;
     display:flex;
     flex-direction: row;
     align-items: center;
@@ -106,6 +92,7 @@
     width: 18px;
     height: 20px;
 }
+
 .bct-help{
     order:3;
     margin-left:5px;
@@ -115,18 +102,13 @@
 }
 
 .bct-help-container{
-    margin-left: 15px;
-    position: absolute; 
-    width: 18px; 
-    height: 20px; 
-}
-
-.bct-help-image-common{
-    position: absolute;  
-    width: 4px; 
-    height: 0px; 
-    left: calc(50% - 4px/2 - 7px); 
-    border: 1.5px solid #FFFFFF;
+    position: static;
+    width: 18px;
+    height: 20px;
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+    margin-left: 20px;
 }
 
 .bct-help-rectangle{

@@ -11,7 +11,8 @@ export class NavbarComponent implements OnInit {
   enableAdmin:boolean = false;
   enableAccount:boolean = true;
   langCode: string;
-  submenu: string = "";
+  submenu: string = ""; 
+  showChildItems:boolean = false;
 
   constructor(public translate: TranslateService) {
     this.langCode = translate.currentLang;
@@ -24,4 +25,10 @@ export class NavbarComponent implements OnInit {
     this.enableAccount = false;
   }
 
+  toggleChildMenu(e: Event){
+    e.preventDefault();
+    console.log("showChildItems", this.showChildItems);
+    this.showChildItems = !(this.showChildItems) ;
+    console.log("showChildItems", this.showChildItems);
+  }
 }
