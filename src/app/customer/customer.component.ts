@@ -10,6 +10,12 @@ import { IssueComponent } from 'src/app/issue/issue.component';
 })
 export class CustomerComponent implements OnInit {
 
+  isShowDiv = false;
+   
+  toggleDisplayDiv() {
+    this.isShowDiv = !this.isShowDiv;
+  }
+  
   constructor(private service:SharedService) { }
 
   @Input() customer:any;
@@ -19,8 +25,6 @@ export class CustomerComponent implements OnInit {
     this.getCustomerList();
   }
 
-  
- 
 
   getCustomerList() {
     this.service.getCustomerList().subscribe(data =>{

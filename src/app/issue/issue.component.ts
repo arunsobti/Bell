@@ -78,5 +78,10 @@ export class IssueComponent implements OnInit {
     this.issueService.save(this.issueForm);
   }
 
-
+  isShowDiv = false;
+   
+  toggleDisplayDiv() {
+    this.isShowDiv = !this.isShowDiv;
+  }
+  
 }

@@ -9,11 +9,11 @@
           <td>&nbsp;</td>
           <td>&nbsp;</td>
           <td>&nbsp;</td>
-          <td class="form-data-right"><br><a href="" onclick="showHide('customerDataBody');return false;"><img class="greyAreaImages" src="/assets/oval_snapshot.png"></a><br></td>
+          <td class="form-data-right"><br><a href="javaScript:e.preventDefault();" (click)="toggleDisplayDiv()"><img class="greyAreaImages" src="/assets/oval_snapshot.png"></a><br></td>
         </tr>
         <tr><td colspan="6">&nbsp;</td></tr>
       </thead>
-      <tbody id="customerDataBody">
+      <tbody id="customerDataBody" [hidden]="isShowDiv">
       <tr>
         <td class="form-labels"><label for="mastnac">MASTNAC </label></td>
         <td class="form-data-left"><label for="mastnac"> {{CustomerList.mastnac}}</label></td>
@@ -179,14 +179,5 @@
     </table>
 
 </div>
-<script>
-  function showHide(parm1) {
-    alert("TEST");
-    if (document.getElementById(parm1) .style.display = 'none') {
-      document.getElementById(parm1) .style.display = 'block';
-    } else {
-      document.getElementById(parm1) .style.display = 'none';
-    }
-  }
-  </script>
+
 
