@@ -78,6 +78,7 @@
     margin: 0px 5px;
     }
     
+    
     .left {
         text-align: left;
     }
@@ -149,4 +150,22 @@
         height: 20px;
         width: 20px;
         vertical-align: bottom;
+        text-decoration: none;
     }
+
+
+    a:link {
+        text-decoration: none;
+      }
+      
+      a:visited {
+        text-decoration: none;
+      }
+      
+      a:hover {
+        text-decoration: underline;
+      }
+      
+      a:active {
+        text-decoration: underline;
+      }

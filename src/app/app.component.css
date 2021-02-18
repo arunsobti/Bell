@@ -13,7 +13,7 @@
 }
 .pageContent{
     width:100%;
-    border:green solid 3px;
+    border:whitesmoke solid 1px;
     flex:1;
     display: flex;
     flex-direction: column;
