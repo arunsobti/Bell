@@ -15,18 +15,23 @@ export class IssueComponent implements OnInit {
   private customerId: string = "";
   private today = new Date();
 
-  issueForm = new FormGroup ({
-    recordId: new FormControl(""),
-    customerId: new FormControl(""),
-    issue: new FormControl(""),
-    creationDate: new FormControl(this.formatDate()),
-    trackingDate: new FormControl(this.formatDate()),
-    status: new FormControl(""),
-    amount: new FormControl(""),
-    updatedBy: new FormControl("ez001"),
-    remark: new FormControl("")
-  });
+  issueForm = new FormGroup ({});
 
+  private initialize() {
+
+    this.issueForm = new FormGroup ({
+      recordId: new FormControl(""),
+      customerId: new FormControl(""),
+      issue: new FormControl(""),
+      creationDate: new FormControl(this.formatDate()),
+      trackingDate: new FormControl(this.formatDate()),
+      status: new FormControl(""),
+      amount: new FormControl(""),
+      updatedBy: new FormControl("ez001"),
+      remark: new FormControl("")
+    });
+  
+  }
 
   private formatDate() {
     var d = new Date(),
@@ -43,16 +48,17 @@ export class IssueComponent implements OnInit {
 }
 
   constructor(public modalService: ModalService, public issueService: IssueService, private route: ActivatedRoute) { 
+    this.initialize();
   }
   
   ngOnInit() {
+
 
     this.route.queryParams.subscribe(params => {
       this.customerId = params['customerId']
       this.issueForm.value.customerId = this.customerId;
     });
-
-    
+   
 
     if (this.customerId == null) {
 
@@ -76,7 +82,13 @@ export class IssueComponent implements OnInit {
     
     this.issueForm.value.customerId = this.customerId;
     this.issueService.save(this.issueForm);
+    this.initialize();
   }
 
-
+  isShowDiv = false;
+   
+  toggleDisplayDiv() {
+    this.isShowDiv = !this.isShowDiv;
+  }
+  
 }

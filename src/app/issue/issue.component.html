@@ -1,59 +1,63 @@
-
 <br>
 <br>
 <hr>
-    <table border="0">
+    <table style="width:100%;">
+      <thead>
       <tr>
         <td align="left" class="dataNumber"><br>Issues<br></td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        <td align="right"><br><a href="" onclick="showHide('customerDataBody');return false;"><img class="greyAreaImages" src="/assets/oval_snapshot.png"></a><br></td>
+        <td align="right"><br><a href="javaScript:e.preventDefault();" (click)="toggleDisplayDiv()"><img class="greyAreaImages" src="/assets/oval_snapshot.png"></a><br></td>
       </tr>
-      <tr>
+    </thead>
+      <tbody id="customerDataBody" [hidden]="isShowDiv">
+      <tr style="vertical-align: bottom;">
         <td colspan="3">
-          <h3>2 Results</h3>
+          <label class="widgetResults">2 results</label> 
         </td>
         <td colspan="3" align="right">
-          <!--<button class="button" (click)="modalService.open('issue-modal')">+&nbsp;New</button>-->
-          <a href="" (click)="modalService.open('issue-modal')"><img style="height:30px;" src="/assets/history.png"></a> &nbsp;
-          <a href="" (click)="modalService.open('issue-modal')"><img style="height:30px;" src="/assets/new.png"></a> &nbsp;
+          <button class="widgetButton" (click)="modalService.open('issue-modal')"><img style="vertical-align:middle" src="/assets/history.png"> &nbsp;History</button>
+          <button class="widgetButton" (click)="modalService.open('issue-modal')"><img style="vertical-align:middle" src="/assets/new.png"> &nbsp;New</button>
         </td>
       </tr>
-    </table>
 
+      <tr>
+        <td colspan="6">
+          <table border="0" class="result" style="width: 100%;">
+            
+            <tr>  
+              <th style="width: 25%;">Issue creation date</th>
+              <th style="width: 25%;">Issue tracking date</th>
+              <th style="width: 25%;">Ammount</th>
+              <th style="width: 25%;">User last updated</th>
+            </tr>
+      
+      
+            <tr *ngFor='let result of issueService.result'>
+              <td style="width: 25%;"> {{result.creationDate}} </td>
+              <td style="width: 25%;"> {{result.trackingDate}} </td>
+              <td style="width: 25%;"> {{result.amount}} </td>
+              <td style="width: 25%;"> {{result.updatedBy}} </td>
+            </tr>
 
-
-    <table border="0" class="result">
-      <tbody>
-      <tr>  
-        <th>Issue creation date</th>
-        <th>Issue tracking date</th>
-        <th>Ammount</th>
-        <th>User last updated</th>
-      </tr>
-
-
-      <tr *ngFor='let result of issueService.result'>
-        <td> {{result.creationDate}} </td>
-        <td> {{result.trackingDate}} </td>
-        <td> {{result.amount}} </td>
-        <td> {{result.updatedBy}} </td>
+          </table>
+        </td>
       </tr>
     </tbody>
-    </table>
+      </table>
     <br>
     <hr>
 
-
-
-
-<jw-modal id="issue-modal">
-
+<jw-modal id="issue-modal" style="width:50%">
   <form [formGroup]="issueForm" >
-
-    <table border="0" class="search-frame1">
+    <table style="width:100%;">
+      <tr style="background-color: #F4F4F4;">
+        <td colspan="6" align="right">
+          <a class="cancel" style="vertical-align: middle;" href="javaScript:e.preventDefault();" (click)="modalService.close('issue-modal')">
+          <img style="vertical-align: middle;" src="./assets/closingX.png"></a>
+        </td></tr>
       <tr>  
         <td class="search-field"><label for="issue">Issue</label></td>
         <td class="search-field"><label for="creationDate">Creation date</label></td>
@@ -71,19 +75,7 @@
         <td>
           
           <input #trackingDate class="text" formControlName="trackingDate"  size="50">
-<!--
-          <mat-form-field appearance="fill" class="example-form-field">
-            <mat-label>Choose a date</mat-label>
-            <input matInput [matDatepicker]="datepicker">
-            <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
-            <mat-datepicker #datepicker>
-              <mat-datepicker-actions>
-                <button mat-button matDatepickerCancel>Cancel</button>
-                <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
-              </mat-datepicker-actions>
-            </mat-datepicker>
-          </mat-form-field>
-    -->    
+ 
         </td>
         <td><select formControlName="issue" class="select" id="status">
           <option value="Pending">Pending</option>
@@ -97,13 +89,17 @@
         <td colspan="6" class="search-field"><label for="remark">Remark</label></td>
       </tr>
       <tr>  
-        <td colspan="6" ><input #remark formControlName="remark" class="textarea" size="100"></td>
+        <td colspan="6" ><input #remark formControlName="remark" class="textarea" size="200"></td>
       </tr>
       <tr> <td colspan="6" >&nbsp;</td> </tr>
       <tr>  
-        <td align="right"> <button class="button" (click)="modalService.close('issue-modal')">Cancel</button></td>
-        <td align="left"> <button class="button" (click)="save();" id="Save" value="Save">Save</button></td>
-        <td colspan="4"> &nbsp;</td>
+        <td colspan="4" > &nbsp;</td>
+        <td align="right">
+          <a class="cancel" style="vertical-align: middle;" href="javaScript:e.preventDefault();" (click)="modalService.close('issue-modal')">Cancel</a> &nbsp;
+        </td>
+        <td align="left"> 
+          <button  style="vertical-align: middle;" class="button" (click)="save();modalService.close('issue-modal');" id="Save" value="Save">Save</button>
+        </td>
       </tr>
     </table>
   </form>
