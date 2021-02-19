@@ -15,6 +15,8 @@ export class CustomerComponent implements OnInit {
   @Input() customer:any;
   @Input() CustomerList:any=[];
 
+  expandCustomerBody: boolean = true;
+
   ngOnInit(): void {
     this.getCustomerList();
   }
@@ -27,5 +29,12 @@ export class CustomerComponent implements OnInit {
       this.CustomerList=data;
     });
 
+  }
+
+  showHide(section :string, e:Event){
+    e.preventDefault();
+    if(section === 'customerDataBody'){
+      this.expandCustomerBody = !this.expandCustomerBody;
+    }
   }
 }
