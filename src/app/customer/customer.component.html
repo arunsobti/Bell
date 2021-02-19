@@ -1,7 +1,5 @@
-
-
 <div class="search" id="customerData">
-    <table border="0" class="search-frame1">
+    <table style="border:0;" class="search-frame1">
       <thead id="customerDataHead">
         <tr>
           <td class="form-labels bigger"><br>Customer Info<br></td>
@@ -9,11 +7,16 @@
           <td>&nbsp;</td>
           <td>&nbsp;</td>
           <td>&nbsp;</td>
-          <td class="form-data-right"><br><a href="javaScript:e.preventDefault();" (click)="toggleDisplayDiv()"><img class="greyAreaImages" src="/assets/oval_snapshot.png"></a><br></td>
+          <td class="form-data-right">
+            <a href="" (click)="showHide('customerDataBody', $event)">
+               <img *ngIf="expandCustomerBody" class="greyAreaImages" src="/assets/oval_snapshot.png">
+               <img *ngIf="!expandCustomerBody" class="greyAreaImages" src="/assets/Group.png">
+            </a>
+          </td>
         </tr>
         <tr><td colspan="6">&nbsp;</td></tr>
       </thead>
-      <tbody id="customerDataBody" [hidden]="isShowDiv">
+      <tbody *ngIf="expandCustomerBody" id="customerDataBody">
       <tr>
         <td class="form-labels"><label for="mastnac">MASTNAC </label></td>
         <td class="form-data-left"><label for="mastnac"> {{CustomerList.mastnac}}</label></td>
