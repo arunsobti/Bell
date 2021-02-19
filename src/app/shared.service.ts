@@ -35,7 +35,7 @@ export class SharedService {
 
   // LIST CUSTOMER ISSUES(s)
   getCustomerIssuesList(): Observable<any[]> {
-    return this.http.get<any>(this.APIUrl + '/CustomerIssues') ;
+    return this.http.get<any>(this.APIUrl + '/CustomerIssues/1') ;
     //return this.http.get<any>(this.APIUrl + '/customer'); <-- should be this, but we're hardoding for demo
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { IssueService} from '../../services/issue.service'
 import { ModalService } from '../_modal';
@@ -14,7 +14,8 @@ export class IssueComponent implements OnInit {
 
   private customerId: string = "";
   private today = new Date();
-  CustomerIssuesList:any=[];
+  @Input() customerIssues:any;
+  @Input() CustomerIssuesList:any=[];
   
   issueForm = new FormGroup ({
     recordId: new FormControl(""),
@@ -47,14 +48,13 @@ export class IssueComponent implements OnInit {
   }
   
   ngOnInit() {
-    this.getCustomerIssuesList();
 
     this.route.queryParams.subscribe(params => {
       this.customerId = params['customerId']
       this.issueForm.value.customerId = this.customerId;
     });
 
-    
+    this.getCustomerIssuesList();
 
     if (this.customerId == null) {
 
@@ -62,6 +62,8 @@ export class IssueComponent implements OnInit {
       return;
     }
     // this.search(customerId);
+
+
   }
 
   getCustomerIssuesList() {
