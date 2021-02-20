@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ModalService } from 'src/app/_modal';
 import { SearchCustomerService} from '../../../services/search-customer.service'
 
 
@@ -30,7 +31,7 @@ export class SearchCustomerComponent implements OnInit {
       });  
   }
 
-  constructor(public searchCustomerService: SearchCustomerService) { 
+  constructor(public searchCustomerService: SearchCustomerService, public modalSerivce: ModalService) { 
 
     this.initialize();
   }
