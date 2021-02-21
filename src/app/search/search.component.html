@@ -1,53 +1,88 @@
-<div class="search">
-  <form [formGroup]="searchForm" >
-    <table border="0" class="search-frame1">
-      <tr>  
-        <td class="search-field"><label for="userID">User ID</label></td>
-        <td class="search-field">PEIN</td>
-        <td class="search-field">First Name</td>
-        <td class="search-field">Last Name</td>
-        <td class="search-field">Manager</td>
-        <td class="search-field">Role</td>
-      </tr>
-      <tr>  
-        <td><input #userID class="text" formControlName="userID" size="20"></td>
-        <td><input #PEIN class="text" formControlName="PEIN" size="20"></td>
-        <td><input #firstName class="text" formControlName="firstName" size="50"></td>
-        <td><input #lastName class="text" formControlName="lastName" size="50"></td>
-        <td><input class="text" type="text" name="Manager" value="" id="Manager" size="100"></td>
-        <td><select class="text" type="select" name="Role" value="" id="Role" size="20"></select></td>
-      </tr>
-    </table>
-    <table border="0" class="search-frame2" align="right">
-      <tr>  
-        <td> <input class="button" (click)="search()"  type="button" name="Search" value="Search">
-        </td>
-      </tr>
-    </table>
-    </form>
-  </div>
+<div class="container-fluid">
+    
+  <div class="card">
+      <div class="card-body">
 
-  <div *ngIf="searchService.result.length > 0">
-    <div class="search-result">
-      <table border="0" class="result">
-        <tbody>
-        <tr>  
-          <th>User ID</th>
-          <th>PEIN</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Manager</th>
-          <th>Role</th>
-        </tr>
-        <tr *ngFor='let result of searchService.result'>
-            <td> {{result.userID}} </td>
-        <td> {{result.PEIN}} </td>
-        <td> {{result.firstName}} </td>
-        <td> {{result.lastName}} </td>
-        <td>  </td>
-        <td>  </td>
-      </tr>
-      </tbody>
-    </table>
+        <form [formGroup]="searchForm" >
+          <div class="form-row">
+              <div class="form-group col-md-4">
+                  <label for="inputEmail4" class="col-form-label-sm font-weight-bold">User ID</label>
+                  <input type="text" class="form-control form-control-sm" 
+                      placeholder="" formControlName="userID" size="20">
+              </div>
+              <div class="form-group col-md-4">
+                  <label for="inputPassword4"
+                      class="col-form-label-sm font-weight-bold">PEIN</label>
+                  <input type="text" class="form-control form-control-sm" id="inputPassword4"
+                      placeholder="" formControlName="PEIN" size="20">
+              </div>
+              <div class="form-group col-md-4">
+                  <label for="inputPassword5" class="col-form-label-sm font-weight-bold">First name</label>
+                  <input type="text" class="form-control form-control-sm" id="inputPassword5"
+                      placeholder="" formControlName="firstName" size="50">
+              </div>
+          </div>
+          <div class="form-row">
+              <div class="form-group col-md-4">
+                  <label for="inputEmail6" class="col-form-label-sm font-weight-bold">Last name</label>
+                  <input type="text" class="form-control form-control-sm" id="inputEmail6"
+                      placeholder="" formControlName="lastName" size="50">
+              </div>
+              <div class="form-group col-md-4">
+                  <label for="inputState"
+                      class="col-form-label-sm font-weight-bold">Manager</label>
+                  <select id="inputState" class="form-control form-control-sm">
+                      <option selected>- Select -</option>
+                      <option>...</option>
+                  </select>
+              </div>
+              <div class="form-group col-md-4">
+                  <label for="inputPassword7"
+                      class="col-form-label-sm font-weight-bold">Role</label>
+                  <select id="inputState" class="form-control form-control-sm">
+                      <option selected>- Select -</option>
+                      <option>...</option>
+                  </select>
+              </div>
+          </div>
+
+          <div class="mt-2">
+              <button (click)="search()"  class="btn btn-sm btn-msi-02 float-right"><i
+                      class="fas fa-search mr-1"></i>Search</button>
+          </div>
+
+        </form>
+ 
+        <div *ngIf="searchService.result.length > 0">
+          <div class="search-result">
+            <table border="0" class="result">
+              <tbody>
+              <tr>  
+                <th>User ID</th>
+                <th>PEIN</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Manager</th>
+                <th>Role</th>
+              </tr>
+              <tr *ngFor='let result of searchService.result'>
+                  <td> {{result.userID}} </td>
+              <td> {{result.PEIN}} </td>
+              <td> {{result.firstName}} </td>
+              <td> {{result.lastName}} </td>
+              <td>  </td>
+              <td>  </td>
+            </tr>
+            </tbody>
+          </table>
+            </div>
+          </div>
+      
+       
+ 
       </div>
-    </div>
+  </div>
+</div>
+
+
+
