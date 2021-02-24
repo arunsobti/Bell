@@ -1,17 +1,43 @@
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" />
-<div class="headerWrapper">
+
+<link rel="stylesheet" href="/vendor/bootstrap/css/dataTables.bootstrap4.min.css" />
+<link rel="stylesheet" href="/vendor/fontawesome-pro/css/all.min.css" />
+
+
+<nav class="topnav navbar navbar-expand shadow navbar-light bg-msi-01" id="sidenavAccordion">
     <app-topbar></app-topbar>
-</div>    
-<div class="contentWrapper">
+</nav>
+
+<div id="layoutSidenav">
     <app-Navbar></app-Navbar>
-    <div class="pageContent">
-        <div class="pageHeader">
-            <app-header></app-header>
-        </div>
-        <div>
-            <router-outlet></router-outlet>
-        </div>
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+    
+                        <app-header></app-header>
+    
+                        <router-outlet></router-outlet>
+    
+                    </div>
+                </div>
+            </div>
+        </main>
+    
+        <footer class="footer mt-auto footer-light small">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 small">
+                        Bell Canada, 2020. All rights reserved.
+                    </div>
+                    <div class="col-md-6 text-md-right small">
+                        0.9<i class="fad fa-grip-vertical ml-2"></i>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+    
     </div>
 </div>
-
-

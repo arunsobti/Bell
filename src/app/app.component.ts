@@ -8,7 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'BCT Proof of Concept';
+  title = 'Bell Collection Tool';
 
   constructor(
     private router: Router, 
