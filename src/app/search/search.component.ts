@@ -1,7 +1,6 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { SearchService} from '../../services/search.service'
-import { AgGridModule } from 'ag-grid-angular';
 
 
 
