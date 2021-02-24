@@ -1,6 +1,9 @@
-import { Component, Input, Output, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { SearchService} from '../../services/search.service'
+import { AgGridModule } from 'ag-grid-angular';
+
+
 
 @Component({
   selector: 'app-search',
@@ -8,6 +11,8 @@ import { SearchService} from '../../services/search.service'
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+
+  // @ViewChild(DataTableDirective, {static: false})
 
   searchForm = new FormGroup ({
     userID: new FormControl(""),
