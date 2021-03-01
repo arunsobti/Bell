@@ -1,3 +1,5 @@
+
+
 <div class="search">
   <form [formGroup]="searchForm" >
     <table border="0" class="search-frame1">
@@ -25,29 +27,25 @@
       </tr>
     </table>
     </form>
-  </div>
+    </div>
+
 
   <div *ngIf="searchService.result.length > 0">
     <div class="search-result">
-      <table border="0" class="result">
-        <tbody>
-        <tr>  
-          <th>User ID</th>
-          <th>PEIN</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Manager</th>
-          <th>Role</th>
-        </tr>
-        <tr *ngFor='let result of searchService.result'>
-            <td> {{result.userID}} </td>
-        <td> {{result.PEIN}} </td>
-        <td> {{result.firstName}} </td>
-        <td> {{result.lastName}} </td>
-        <td>  </td>
-        <td>  </td>
-      </tr>
-      </tbody>
-    </table>
+
+          <ag-grid-angular
+            #employeeSearch
+            style="width: 100%; height: 100%;"
+            class="ag-theme-alpine"
+            [pagination]="true"
+            (onGridReady)="onGridReady($event)"
+            [defaultColDef] = "defaultColDef"
+            [rowSelection]="rowSelection"
+            [enableRangeSelection]="true"
+            [suppressRowClickSelection]="true"
+            [rowData]="rowData"
+            [paginationPageSize]="pageSize"
+            [columnDefs]="columnDefs">
+        </ag-grid-angular>
       </div>
     </div>

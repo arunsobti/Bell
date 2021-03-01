@@ -8,10 +8,26 @@ private data = [
     {"userID": "ex001", "PEIN":"ex001", "firstName": "Arun", "lastName": "Sobti", "manager": "Someone"},
     {"userID": "ex002", "PEIN":"ex002", "firstName": "Paresh", "lastName": "Sobti", "manager": "Someone"},
     {"userID": "ex003", "PEIN":"ex003", "firstName": "Saadi", "lastName": "Gebara", "manager": "Someone"},
+    {"userID": "ex003", "PEIN":"ex003", "firstName": "Saadi", "lastName": "Gebara", "manager": "Someone"},
+    {"userID": "ex003", "PEIN":"ex003", "firstName": "Saadi", "lastName": "Gebara", "manager": "Someone"},
+    {"userID": "ex003", "PEIN":"ex003", "firstName": "Saadi", "lastName": "Gebara", "manager": "Someone"},
+    {"userID": "ex003", "PEIN":"ex003", "firstName": "Saadi", "lastName": "Gebara", "manager": "Someone"},
+    {"userID": "ex003", "PEIN":"ex003", "firstName": "Saadi", "lastName": "Gebara", "manager": "Someone"},
+    {"userID": "ex003", "PEIN":"ex003", "firstName": "Saadi", "lastName": "Gebara", "manager": "Someone"},
+    {"userID": "ex003", "PEIN":"ex003", "firstName": "Saadi", "lastName": "Gebara", "manager": "Someone"},
+    {"userID": "ex003", "PEIN":"ex003", "firstName": "Saadi", "lastName": "Gebara", "manager": "Someone"},
+    {"userID": "ex003", "PEIN":"ex003", "firstName": "Saadi", "lastName": "Gebara", "manager": "Someone"},
+    {"userID": "ex003", "PEIN":"ex003", "firstName": "Saadi", "lastName": "Gebara", "manager": "Someone"},
+    {"userID": "ex003", "PEIN":"ex003", "firstName": "Saadi", "lastName": "Gebara", "manager": "Someone"},
+    {"userID": "ex003", "PEIN":"ex003", "firstName": "Saadi", "lastName": "Gebara", "manager": "Someone"},
+    {"userID": "ex003", "PEIN":"ex003", "firstName": "Saadi", "lastName": "Gebara", "manager": "Someone"},
+    {"userID": "ex003", "PEIN":"ex003", "firstName": "Saadi", "lastName": "Gebara", "manager": "Someone"},
+    {"userID": "ex003", "PEIN":"ex003", "firstName": "Saadi", "lastName": "Gebara", "manager": "Someone"},
+    {"userID": "ex003", "PEIN":"ex003", "firstName": "Saadi", "lastName": "Gebara", "manager": "Someone"},
     {"userID": "ex004", "PEIN":"ex004", "firstName": "Matt", "lastName": "Abarbanel", "manager": "Someone"}
 ];
 
-  search(searchForm: FormGroup) {
+  search(searchForm: FormGroup): string[] {
 
     this.reset();
 
@@ -30,7 +46,7 @@ private data = [
         this.result.push(this.data[i]);
       }
     }
-  //  return this.result;
+    return this.result;
   }
 
   reset() {

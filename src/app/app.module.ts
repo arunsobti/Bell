@@ -20,6 +20,9 @@ import { IssueComponent } from './issue/issue.component';
 import { ModalModule } from './_modal';
 import { HeaderComponent } from './header/header.component';
 
+import { AgGridModule } from "@ag-grid-community/angular";
+
+
 
 @NgModule({
   declarations: [				
@@ -46,7 +49,8 @@ import { HeaderComponent } from './header/header.component';
         provide: TranslateLoader,
         useClass:UniversalTranslateLoader
       }
-    })
+    }),
+    AgGridModule.withComponents([])
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]
