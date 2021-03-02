@@ -18,8 +18,8 @@
           <label class="widgetResults">2 results</label> 
         </td>
         <td colspan="3" align="right">
-          <button class="widgetButton" (click)="modalService.open('issue-modal')"><img style="vertical-align:middle" src="/assets/history.png"> &nbsp;History</button>
-          <button class="widgetButton" (click)="modalService.open('issue-modal')"><img style="vertical-align:middle" src="/assets/new.png"> &nbsp;New</button>
+          <button class="widgetButton" (click)="open('issue-modal')"><img style="vertical-align:middle" src="/assets/history.png"> &nbsp;History</button>
+          <button class="widgetButton" (click)="open('issue-modal')"><img style="vertical-align:middle" src="/assets/new.png"> &nbsp;New</button>
         </td>
       </tr>
 
@@ -51,60 +51,84 @@
     <br>
     <hr>
 
-<jw-modal id="issue-modal" style="width:1000px;" class="center" >
-  <form [formGroup]="issueForm" >
-    <table style="width:100%;">
-      <tr style="background-color: #F4F4F4;">
-        <td colspan="6" align="right">
-          <br>
-          <a class="cancel" style="vertical-align: middle;" href="javaScript:e.preventDefault();" (click)="modalService.close('issue-modal')">
-          <img style="vertical-align: middle;" src="./assets/closingX.png"></a>
-          <br>
-        </td></tr>
-      <tr>  
-        <td class="search-field"><label for="issue">Issue</label></td>
-        <td class="search-field"><label for="creationDate">Creation date</label></td>
-        <td class="search-field"><label for="trackingDate">Issue tracking date</label></td>
-        <td class="search-field"><label for="status">Status</label></td>
-        <td class="search-field"><label for="amount">Amount</label></td>
-        <td class="search-field"><label for="updatedBy">User last updated</label></td>
-      </tr>
-      <tr>  
-        <td><select formControlName="issue" class="select" id="issue">
-            <option value="DuplicateInvoice">Duplicate invoice</option>
-            </select>
-        </td>
-        <td><input readonly="readonly" #creationDate class="readonly" formControlName="creationDate" size="20"></td>
-        <td>
-          
-          <input #trackingDate class="text" formControlName="trackingDate"  size="50">
- 
-        </td>
-        <td><select formControlName="issue" class="select" id="status">
-          <option value="Pending">Pending</option>
-          </select>
-      </td>
-      <td><input #amount class="text" formControlName="amount" size="50"></td>
-        <td><input readonly="readonly" #updatedBy type="text" class="readonly" formControlName="updatedBy" size="50"></td>
-      </tr>
 
-      <tr>  
-        <td colspan="6" class="search-field"><label for="remark">Remark</label></td>
-      </tr>
-      <tr>  
-        <td colspan="6" ><input #remark formControlName="remark" class="textarea" size="228"></td>
-      </tr>
-      <tr> <td colspan="6" >&nbsp;</td> </tr>
-      <tr>  
-        <td colspan="4" > &nbsp;</td>
-        <td align="right">
-          <a class="cancel" style="vertical-align: middle;" href="javaScript:e.preventDefault();" (click)="modalService.close('issue-modal')">Cancel</a> &nbsp;
-        </td>
-        <td align="left"> 
-          <button  style="vertical-align: middle;" class="button" (click)="save();modalService.close('issue-modal');" id="Save" value="Save">Save</button>
-        </td>
-      </tr>
-    </table>
-  </form>
+    <button id="myBtn" (click)="open('issue-modal')">Open Modal</button>
 
-</jw-modal>
+<!-- The Modal -->
+<div id="issue-modal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+
+
+  <header class="modal-header">
+      <h2 class="modal-title">Confirm</h2>
+  </header>
+  <div class="modal-body">
+      <p>Please confirm</p>
+
+      <form [formGroup]="issueForm" >
+        <table style="width:100%;">
+          <tr style="background-color: #F4F4F4;">
+            <td colspan="6" align="right">
+              <br>
+              <a class="cancel" style="vertical-align: middle;" href="javaScript:e.preventDefault();" (click)="close('issue-modal')">
+              <img style="vertical-align: middle;" src="./assets/closingX.png"></a>
+              <br>
+            </td></tr>
+          <tr>  
+            <td class="search-field"><label for="issue">Issue</label></td>
+            <td class="search-field"><label for="creationDate">Creation date</label></td>
+            <td class="search-field"><label for="trackingDate">Issue tracking date</label></td>
+            <td class="search-field"><label for="status">Status</label></td>
+            <td class="search-field"><label for="amount">Amount</label></td>
+            <td class="search-field"><label for="updatedBy">User last updated</label></td>
+          </tr>
+          <tr>  
+            <td><select formControlName="issue" class="select" id="issue">
+                <option value="DuplicateInvoice">Duplicate invoice</option>
+                </select>
+            </td>
+            <td><input readonly="readonly" #creationDate class="readonly" formControlName="creationDate" size="20"></td>
+            <td>
+              
+              <input #trackingDate class="text" formControlName="trackingDate"  size="50">
+     
+            </td>
+            <td><select formControlName="issue" class="select" id="status">
+              <option value="Pending">Pending</option>
+              </select>
+          </td>
+          <td><input #amount class="text" formControlName="amount" size="50"></td>
+            <td><input readonly="readonly" #updatedBy type="text" class="readonly" formControlName="updatedBy" size="50"></td>
+          </tr>
+    
+          <tr>  
+            <td colspan="6" class="search-field"><label for="remark">Remark</label></td>
+          </tr>
+          <tr>  
+            <td colspan="6" ><input #remark formControlName="remark" class="textarea" size="228"></td>
+          </tr>
+          <tr> <td colspan="6" >&nbsp;</td> </tr>
+          <tr>  
+            <td colspan="4" > &nbsp;</td>
+            <td align="right">
+              <a class="cancel" style="vertical-align: middle;" href="javaScript:e.preventDefault();" (click)="close('issue-modal')">Cancel</a> &nbsp;
+            </td>
+            <td align="left"> 
+              <button  style="vertical-align: middle;" class="button" (click)="save();close('issue-modal');" id="Save" value="Save">Save</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    
+
+    </div>
+  <div class="modal-footer">
+      <button id="btnCancelDelete" class="btn btn-primary btn-cancel" type="button">Cancel</button>
+      <button id="btnDelete" class="btn btn-default btn-submit" type="button">Ok</button>
+  </div>
+
+  </div>
+</div>

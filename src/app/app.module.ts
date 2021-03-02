@@ -17,7 +17,6 @@ import { UniversalTranslateLoader} from './shared/localization/universal-transla
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { SubNavComponent } from './Navbar/sub-nav/sub-nav.component';
 import { IssueComponent } from './issue/issue.component';
-import { ModalModule } from './_modal';
 import { HeaderComponent } from './header/header.component';
 
 import { AgGridModule } from "@ag-grid-community/angular";
@@ -43,7 +42,6 @@ import { AgGridModule } from "@ag-grid-community/angular";
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    ModalModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

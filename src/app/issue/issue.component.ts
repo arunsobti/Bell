@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { IssueService} from '../../services/issue.service'
-import { ModalService } from '../_modal';
 import {ActivatedRoute} from '@angular/router';
 import { SharedService} from 'src/app/shared.service';
 
@@ -44,7 +43,7 @@ export class IssueComponent implements OnInit {
     return [year, month, day].join('-');
 }
 
-  constructor(private service:SharedService, public modalService: ModalService, public issueService: IssueService, private route: ActivatedRoute) { 
+  constructor(private service:SharedService, public issueService: IssueService, private route: ActivatedRoute) { 
   }
   
   ngOnInit() {
@@ -62,8 +61,6 @@ export class IssueComponent implements OnInit {
       return;
     }
     // this.search(customerId);
-
-
   }
 
   getCustomerIssuesList() {
@@ -93,4 +90,17 @@ export class IssueComponent implements OnInit {
     this.isShowDiv = !this.isShowDiv;
   }
 
+  open(modal: string) {
+
+    let modalElement = document.getElementById(modal);
+
+    if(modalElement != null) {
+
+      modalElement.style.display = "block";
+    }
+  }
+
+  close(modal: string) {
+
+  }
 }
